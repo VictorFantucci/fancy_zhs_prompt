@@ -1,4 +1,4 @@
-# Fancy_zhs-prompt
+# fancy_zhs_prompt
 
 This repository contains my customized zsh configuration, inspired by the Kali Linux terminal setup.
 
@@ -36,4 +36,4 @@ Feel free to contribute to this repository by suggesting improvements or additio
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
