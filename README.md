@@ -1,4 +1,4 @@
-# fancy_zhs_prompt
+# FANCY ZHS PROMPT
 
 This repository contains my customized zsh configuration, inspired by the Kali Linux terminal setup.
 
@@ -9,6 +9,30 @@ This repository contains my customized zsh configuration, inspired by the Kali L
   - The `cd()` function automates the activation and deactivation of virtual environments.
   - When navigating into a directory containing a virtual environment (`./.env`), it automatically activates the environment.
   - If already in a virtual environment and navigating out of it, the function deactivates the environment.
+    - For Python developers like me, navigating through project directories can be a frequent task. That's why I've added a handy feature to the `cd()` function:
+
+    ```bash
+    function cd() {
+      builtin cd "$@"
+    
+      if [[ -z "$VIRTUAL_ENV" ]] ; then
+        ## If env folder is found then activate the virtualenv
+        if [[ -d ./.env ]] ; then
+          source ./.env/bin/activate
+        fi
+      else
+        ## check if the current folder belongs to an earlier VIRTUAL_ENV folder
+        # if yes, do nothing
+        # else, deactivate
+        parentdir="$(dirname "$VIRTUAL_ENV")"
+        if [[ "$PWD"/ != "$parentdir"/* ]] ; then
+          deactivate
+        fi
+      fi
+    }
+    ```
+  
+  With this function, whenever you change directories, it automatically activates a virtual environment if it finds one in the `.env` folder. This saves you the hassle of manually activating it every time you switch projects.
 
 ## Usage
 
@@ -37,3 +61,9 @@ Feel free to contribute to this repository by suggesting improvements or additio
 ## License
 
 This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
+
+## Additional Resources
+
+- [How to Make Ubuntu Terminal Look like Kali Linux](https://linuxopsys.com/topics/make-ubuntu-terminal-look-like-kali-linux)
+- [How to automatically activate virtualenvs when cd'ing into a directory](https://stackoverflow.com/questions/45216663/how-to-automatically-activate-virtualenvs-when-cding-into-a-directory)
+
