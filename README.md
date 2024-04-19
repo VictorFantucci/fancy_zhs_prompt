@@ -1,13 +1,13 @@
-# FANCY ZHS PROMPT
+# FANCY ZHSRC PROMPT
 
-This repository contains my customized zsh configuration, inspired by the Kali Linux terminal setup.
+This repository contains my customized zshrc configuration, inspired by the Kali Linux terminal setup.
 
 ## Features
 
 - **Customized Prompt**: The prompt is designed to be visually appealing and functional.
 - **Python-centric**: As I primarily code in Python, this configuration includes a helpful `cd()` function.
   - The `cd()` function automates the activation and deactivation of virtual environments.
-  - When navigating into a directory containing a virtual environment (`./.env`), it automatically activates the environment.
+  - When navigating into a directory containing a virtual environment (`./env`), it automatically activates the environment.
   - If already in a virtual environment and navigating out of it, the function deactivates the environment.
     - For Python developers like me, navigating through project directories can be a frequent task. That's why I've added a handy feature to the `cd()` function:
 
@@ -17,8 +17,8 @@ This repository contains my customized zsh configuration, inspired by the Kali L
     
       if [[ -z "$VIRTUAL_ENV" ]] ; then
         ## If env folder is found then activate the virtualenv
-        if [[ -d ./.env ]] ; then
-          source ./.env/bin/activate
+        if [[ -d ./env ]] ; then
+          source ./env/bin/activate
         fi
       else
         ## check if the current folder belongs to an earlier VIRTUAL_ENV folder
@@ -32,7 +32,7 @@ This repository contains my customized zsh configuration, inspired by the Kali L
     }
     ```
   
-  With this function, whenever you change directories, it automatically activates a virtual environment if it finds one in the `.env` folder. This saves you the hassle of manually activating it every time you switch projects.
+  With this function, whenever you change directories, it automatically activates a virtual environment if it finds one in the `env` folder. This saves you the hassle of manually activating it every time you switch projects.
 
 ## Usage
 
