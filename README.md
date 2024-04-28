@@ -45,7 +45,7 @@ This repository contains my customized zshrc configuration, inspired by the Kali
 2. Copy the `.zshrc` file to your home directory:
 
    ```bash
-   cp fancy_zhs-prompt/.zshrc ~/.zshrc
+   cp fancy_zhs_prompt/.zshrc ~/.zshrc
    ```
 
 3. Source the `.zshrc` file to apply the changes:
