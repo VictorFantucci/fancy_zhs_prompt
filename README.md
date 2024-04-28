@@ -39,7 +39,7 @@ This repository contains my customized zshrc configuration, inspired by the Kali
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/fancy_zhs-prompt.git
+   git clone https://github.com/VictorFantucci/fancy_zhs-prompt.git
    ```
 
 2. Copy the `.zshrc` file to your home directory:
